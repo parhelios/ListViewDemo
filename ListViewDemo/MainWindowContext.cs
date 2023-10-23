@@ -6,7 +6,7 @@ namespace ListViewDemo;
 
 public class MainWindowContext : INotifyPropertyChanged
 {
-    private string _prodName;
+    private string _prodName = "Hej";
 
     public string ProdName
     {
@@ -21,21 +21,17 @@ public class MainWindowContext : INotifyPropertyChanged
         }
     }
 
-    private string _prodCost;
+    private string _prodPrice;
 
-    public string ProdCost
+    public string ProdPrice
     {
-        get
-        {
-            return _prodCost;
-        }
+        get { return _prodPrice; }
         set
         {
-            _prodCost = value;
-            OnPropertyChanged("ProdCost");
+            _prodPrice = value; 
+            OnPropertyChanged("ProdPrice");
         }
     }
-
 
     public event PropertyChangedEventHandler? PropertyChanged;
 
