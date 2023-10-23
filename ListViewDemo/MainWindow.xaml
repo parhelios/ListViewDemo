@@ -8,6 +8,7 @@
     Title="MainWindow"
     Width="800"
     Height="450"
+    FontSize="28"
     mc:Ignorable="d">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -31,6 +32,9 @@
             <StackPanel Grid.Row="1" Grid.Column="1">
                 <TextBox Name="NameText" />
                 <TextBox Name="PriceText" />
+                <Button Name="UpdateProdBtn" Click="UpdateProdBtn_OnClick">
+                    Update Product
+                </Button>
             </StackPanel>
         </Grid>
     </Grid>

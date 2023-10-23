@@ -41,5 +41,31 @@ namespace ListViewDemo
                 PriceText.Text = selectedItem.Price.ToString();
             }
         }
+
+        private void UpdateProdBtn_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (Products.SelectedItem is Product selectedItem)
+            {
+                //selectedItem.Name = NameText.Text;
+                //selectedItem.Price = double.Parse(PriceText.Text);
+
+                var selectedProduct = DataSource.Stock.FirstOrDefault(p => p.Name == selectedItem.Name);
+
+                if (selectedProduct is null)
+                {
+                    return;
+                }
+
+                selectedProduct.Name = NameText.Text;
+                selectedProduct.Price = double.Parse(PriceText.Text);
+
+                Products.Items.Clear();
+
+                foreach (var product in DataSource.Stock)
+                {
+                    Products.Items.Add(product);
+                }
+            }
+        }
     }
 }
