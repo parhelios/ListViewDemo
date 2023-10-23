@@ -37,7 +37,8 @@ namespace ListViewDemo
         {
             if (Products.SelectedItem is Product selectedItem)
             {
-                
+                NameText.Text = selectedItem.Name;
+                PriceText.Text = selectedItem.Price.ToString();
             }
         }
     }
