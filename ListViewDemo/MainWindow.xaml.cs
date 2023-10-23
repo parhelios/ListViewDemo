@@ -43,7 +43,7 @@ namespace ListViewDemo
             if (Products.SelectedItem is Product selectedItem)
             {
                 MainWindowContext.ProdName = selectedItem.Name;
-                PriceText.Text = selectedItem.Price.ToString();
+                MainWindowContext.ProdPrice = selectedItem.Price.ToString();
             }
         }
 

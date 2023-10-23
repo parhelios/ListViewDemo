@@ -19,9 +19,19 @@ public class MainWindowContext : INotifyPropertyChanged
             _prodName = value;
             OnPropertyChanged("ProdName");
         }
-    } 
+    }
 
+    private string _prodPrice;
 
+    public string ProdPrice
+    {
+        get { return _prodPrice; }
+        set
+        {
+            _prodPrice = value; 
+            OnPropertyChanged("ProdPrice");
+        }
+    }
 
     public event PropertyChangedEventHandler? PropertyChanged;
 
