@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MovieDataAccess.Data;
 
 namespace ListViewDemo
 {
@@ -20,9 +21,24 @@ namespace ListViewDemo
     /// </summary>
     public partial class MainWindow : Window
     {
+        public DataSource DataSource { get; set; } = new DataSource();
+
         public MainWindow()
         {
             InitializeComponent();
+
+            foreach (var product in DataSource.Stock)
+            {
+                Products.Items.Add(product);
+            }
+        }
+
+        private void Products_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (Products.SelectedItem is Product selectedItem)
+            {
+                
+            }
         }
     }
 }
