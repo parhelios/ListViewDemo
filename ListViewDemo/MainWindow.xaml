@@ -30,7 +30,7 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="1" Grid.Column="1">
-                <TextBox Name="NameText" />
+                <TextBox Name="NameText" Text="{Binding Path=ProdName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <TextBox Name="PriceText" />
                 <Button Name="UpdateProdBtn" Click="UpdateProdBtn_OnClick">
                     Update Product

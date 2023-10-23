@@ -23,9 +23,14 @@ namespace ListViewDemo
     {
         public DataSource DataSource { get; set; } = new DataSource();
 
+        public MainWindowContext MainWindowContext { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
+            MainWindowContext = new MainWindowContext();
+
+            DataContext = MainWindowContext;
 
             foreach (var product in DataSource.Stock)
             {
@@ -37,7 +42,7 @@ namespace ListViewDemo
         {
             if (Products.SelectedItem is Product selectedItem)
             {
-                NameText.Text = selectedItem.Name;
+                MainWindowContext.ProdName = selectedItem.Name;
                 PriceText.Text = selectedItem.Price.ToString();
             }
         }
