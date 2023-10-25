@@ -35,6 +35,8 @@
                 <Button Name="UpdateProdBtn" Click="UpdateProdBtn_OnClick">
                     Update Product
                 </Button>
+                <Button Name="SaveToFile" Click="SaveToFile_OnClick">Save to file</Button>
+                <Button Name="LoadFromFile" Click="LoadFromFile_OnClick">Load from file</Button>
             </StackPanel>
         </Grid>
     </Grid>
